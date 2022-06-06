@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Smart_medical_app</string>
+    <string name="monitor">Monitor</string>
+    <string name="currentposition">CurrentPosition</string>
+    <string name="remind">Remind</string>
+    <string name="personal">Personal</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_montior"
+        android:icon="@drawable/ic_baseline_videocam_24"
+        android:title="@string/monitor" />
+
+    <item
+        android:id="@+id/navigation_position"
+        android:icon="@drawable/ic_baseline_gps_fixed_24"
+        android:title="@string/currentposition" />
+
+    <item
+        android:id="@+id/navigation_remind"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/remind" />
+    <item
+        android:id="@+id/navigation_personal"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/personal"/>
+
+
+</menu>

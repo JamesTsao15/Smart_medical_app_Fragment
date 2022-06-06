@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_montior">
+
+    <fragment
+        android:id="@+id/navigation_montior"
+        android:name="com.example.smart_medical_app.ui.monitor.MonitorFragment"
+        android:label="@string/monitor"
+        tools:layout="@layout/fragment_monitor" />
+
+    <fragment
+        android:id="@+id/navigation_position"
+        android:name="com.example.smart_medical_app.ui.position.PositionFragment"
+        android:label="@string/currentposition"
+        tools:layout="@layout/fragment_position" />
+
+    <fragment
+        android:id="@+id/navigation_remind"
+        android:name="com.example.smart_medical_app.ui.remind.RemindFragment"
+        android:label="@string/remind"
+        tools:layout="@layout/fragment_remind" />
+    <fragment
+        android:id="@+id/navigation_personal"
+        android:name="com.example.smart_medical_app.ui.personal.PersonalFragment"
+        android:label="@string/personal"
+        tools:layout="@layout/fragment_personal"/>
+</navigation>
