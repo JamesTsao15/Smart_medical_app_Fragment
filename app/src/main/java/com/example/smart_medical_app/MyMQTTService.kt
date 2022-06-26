@@ -1,9 +1,6 @@
 package com.example.smart_medical_app
 
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.Service
+import android.app.*
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -46,7 +43,7 @@ class MyMQTTService : Service() {
                 override fun onSuccess(asyncActionToken: IMqttToken?) {
                     Log.e("JAMES", "Connection success")
                     MQTT_subscribe("medical/#")
-                    MQTT_publish("medical/fell_down_alarm", "hello!world")
+                    MQTT_publish("medical/fell_down_alarm", "cellphone_connect")
 
                 }
 
@@ -116,11 +113,14 @@ class MyMQTTService : Service() {
             val channel= NotificationChannel("fell_down_alarm","Fell_Down_Alarm",
                 NotificationManager.IMPORTANCE_HIGH)
             val fell_down_builder = Notification.Builder(this,"fell_down_alarm")
+            val intent=Intent(this,MainActivity::class.java)
+            val pendingIntent= PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_IMMUTABLE)
             fell_down_builder.setSmallIcon(R.drawable.ic_baseline_medical_services_24)
                 .setContentTitle("緊急通知")
                 .setContentText("有人跌倒了，請注意監控")
                 .setWhen(System.currentTimeMillis())
                 .setAutoCancel(true)
+                .setContentIntent(pendingIntent)
             fell_down_notification=fell_down_builder.build()
             notificationManager=getSystemService(NOTIFICATION_SERVICE)as NotificationManager
             notificationManager.createNotificationChannel(channel)
@@ -138,5 +138,10 @@ class MyMQTTService : Service() {
     }
     override fun onBind(intent: Intent): IBinder {
         TODO("Return the communication channel to the service.")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        MQTT_disconnect()
     }
 }

@@ -43,6 +43,7 @@ dependencies {
     implementation 'androidx.room:room-runtime:2.3.0'
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.4'
     implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.6.0'
     implementation 'com.github.pedroSG94.vlc-example-streamplayer:pedrovlc:2.5.14v3'

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClockActivity">
+
+    <TextView
+        android:id="@+id/textView_RemindThing"
+        android:layout_width="159dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="126dp"
+        android:gravity="center"
+        android:text="task_Name"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="180dp"
+        android:layout_height="174dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="116dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_RemindThing"
+        app:srcCompat="@drawable/ic_baseline_access_alarm_24" />
+
+    <Button
+        android:id="@+id/button_RecieveRemind"
+        android:layout_width="238dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="89dp"
+        android:layout_marginEnd="87dp"
+        android:text="接受到提醒"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/button_WaitAMoment"
+        android:layout_width="238dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="84dp"
+        android:text="稍後再提醒我\n(5分鐘)"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_RecieveRemind" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,10 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Smart_medical_app">
+        <activity
+            android:name=".ClockActivity"
+            android:exported="false" />
+        <receiver
+            android:name=".ui.remind.MyAlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
         <service
             android:name=".MyMQTTService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity
             android:name=".MainActivity"

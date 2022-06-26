@@ -4,11 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/5G_project/Smart_medical_app2/app/src/main/res/drawable/ic_baseline_gps_fixed_24.xml" value="0.101" />
+        <entry key="..\:/5G_project/Smart_medical_app2/app/src/main/res/drawable/ic_baseline_medical_services_24.xml" value="0.101" />
         <entry key="..\:/5G_project/Smart_medical_app2/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.101" />
         <entry key="..\:/5G_project/Smart_medical_app2/app/src/main/res/drawable/ic_baseline_videocam_24.xml" value="0.101" />
         <entry key="..\:/5G_project/Smart_medical_app2/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.101" />
+        <entry key="..\:/5G_project/Smart_medical_app2/app/src/main/res/layout/activity_clock.xml" value="0.2" />
         <entry key="..\:/5G_project/Smart_medical_app2/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/5G_project/Smart_medical_app2/app/src/main/res/layout/dialog_setting_remind.xml" value="0.25" />
         <entry key="..\:/5G_project/Smart_medical_app2/app/src/main/res/layout/fragment_monitor.xml" value="0.25" />
+        <entry key="..\:/5G_project/Smart_medical_app2/app/src/main/res/layout/fragment_personal.xml" value="0.12817028985507245" />
+        <entry key="..\:/5G_project/Smart_medical_app2/app/src/main/res/layout/fragment_remind.xml" value="0.22" />
+        <entry key="..\:/5G_project/Smart_medical_app2/app/src/main/res/layout/fragment_setting_alarm_clock.xml" value="0.33" />
         <entry key="..\:/5G_project/Smart_medical_app2/app/src/main/res/layout/personal_fragment.xml" value="0.17603850050658562" />
         <entry key="..\:/5G_project/Smart_medical_app2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.14444444444444443" />
       </map>
