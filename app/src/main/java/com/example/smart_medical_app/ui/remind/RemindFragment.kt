@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment
 import com.example.smart_medical_app.ClockActivity
 import com.example.smart_medical_app.MainActivity
 import com.example.smart_medical_app.R
+import com.example.smart_medical_app.Store_and_Load_ArrayList
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.gson.Gson
 import java.lang.StringBuilder
@@ -69,10 +70,10 @@ class RemindFragment : Fragment() {
         c.set(Calendar.HOUR,alarmInformation.Hour)
         c.set(Calendar.MINUTE,alarmInformation.Minute)
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.KITKAT){
-            alarmManager.set(AlarmManager.RTC_WAKEUP,c.timeInMillis,pendingIntent)
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.timeInMillis,pendingIntent)
         }
         else{
-            alarmManager.set(AlarmManager.RTC_WAKEUP, c.timeInMillis, pendingIntent)
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.timeInMillis, pendingIntent)
         }
         Toast.makeText(requireContext(),"提醒設置完畢",Toast.LENGTH_SHORT).show()
 
@@ -95,7 +96,9 @@ class RemindFragment : Fragment() {
             viewSetUp()
             val currentTime:Calendar= Calendar.getInstance()
             numberPicker_Hour.value=currentTime.get(Calendar.HOUR_OF_DAY)
+            SettingAlarmHour=currentTime.get(Calendar.HOUR_OF_DAY)
             numberPicker_Minute.value=currentTime.get(Calendar.MINUTE)
+            SettingAlarmMinute=currentTime.get(Calendar.MINUTE)
             spinner_RemindCycle.onItemSelectedListener=object :AdapterView.OnItemSelectedListener{
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
                     RemindCycle=position
@@ -123,7 +126,11 @@ class RemindFragment : Fragment() {
                            val task=editText_RemindThing.text.toString()
                            SettingAlarmTime.add(AlarmTime(task,RemindCycle,SettingAlarmHour,SettingAlarmMinute))
                            setAlarmTime(AlarmTime(task,RemindCycle,SettingAlarmHour,SettingAlarmMinute))
-                           Log.e("JAMES",SettingAlarmTime.toString())
+                           val arrayList_in_sharedpreferrence
+                           =Store_and_Load_ArrayList(requireContext(),"MedicalApp",
+                               SettingAlarmTime,"Alarm_ArrayList")
+                           arrayList_in_sharedpreferrence.saveData()
+                           Log.e("JAMES",arrayList_in_sharedpreferrence.loadData().toString())
                        }
                        else{
                            Toast.makeText(requireContext(),"提醒項目欄不得為空，請重新輸入",Toast.LENGTH_SHORT).show()
