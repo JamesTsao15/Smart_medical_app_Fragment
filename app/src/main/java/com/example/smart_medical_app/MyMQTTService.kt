@@ -1,11 +1,14 @@
 package com.example.smart_medical_app
 
+import android.annotation.SuppressLint
 import android.app.*
 import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.IBinder
 import android.util.Log
+import androidx.annotation.RequiresApi
+import androidx.core.app.NotificationCompat
 import info.mqtt.android.service.MqttAndroidClient
 import org.eclipse.paho.client.mqttv3.*
 
@@ -119,6 +122,7 @@ class MyMQTTService : Service() {
                 .setContentTitle("緊急通知")
                 .setContentText("有人跌倒了，請注意監控")
                 .setWhen(System.currentTimeMillis())
+                .setCategory(NotificationCompat.CATEGORY_ALARM)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
             fell_down_notification=fell_down_builder.build()
@@ -129,16 +133,22 @@ class MyMQTTService : Service() {
     override fun onCreate() {
         super.onCreate()
         Log.e("JAMES","MQTTServiceOnCreate")
+        var mBuilder = NotificationCompat.Builder(this, "MyNotification")
+            .setSmallIcon(R.drawable.ic_baseline_medical_services_24)
+            .setContentTitle("「Smart_Medical_App」")
+            .setContentText("pp")
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        startForeground(1,mBuilder.build())
         MQTT_connect(this)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         notification_Setting()
-        return super.onStartCommand(intent, flags, startId)
+        Log.e("JAMES","startMQTTService")
+        return START_STICKY
     }
-    override fun onBind(intent: Intent): IBinder {
-        TODO("Return the communication channel to the service.")
-    }
+    override fun onBind(intent: Intent): IBinder ?=null
 
     override fun onDestroy() {
         super.onDestroy()

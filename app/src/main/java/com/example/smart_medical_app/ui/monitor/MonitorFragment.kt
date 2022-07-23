@@ -12,7 +12,7 @@ import com.pedro.vlc.VlcListener
 import com.pedro.vlc.VlcVideoLibrary
 
 class MonitorFragment : Fragment(),SurfaceHolder.Callback,VlcListener {
-    private var uri:String="rtsp://192.168.0.126:8554/cam"
+    private var uri:String="rtsp://123.195.87.158:8554/cam"
     private var james_uncle_uri:String="rtsp://admin:admin@220.134.71.240:550/h264/main/av_stream"
     private lateinit var vlcVideoLibrary: VlcVideoLibrary
     private lateinit var surfaceView_monitor: SurfaceView
