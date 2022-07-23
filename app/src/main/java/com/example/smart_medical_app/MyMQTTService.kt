@@ -133,12 +133,6 @@ class MyMQTTService : Service() {
     override fun onCreate() {
         super.onCreate()
         Log.e("JAMES","MQTTServiceOnCreate")
-        var mBuilder = NotificationCompat.Builder(this, "MyNotification")
-            .setSmallIcon(R.drawable.ic_baseline_medical_services_24)
-            .setContentTitle("「Smart_Medical_App」")
-            .setContentText("pp")
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-        startForeground(1,mBuilder.build())
         MQTT_connect(this)
     }
 
@@ -146,12 +140,27 @@ class MyMQTTService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         notification_Setting()
         Log.e("JAMES","startMQTTService")
+        val channel= NotificationChannel("MQTT_Service","Start_MQTT_Listener",
+            NotificationManager.IMPORTANCE_HIGH)
+        val pendingIntent: PendingIntent =
+            Intent(this, MainActivity::class.java).let { notificationIntent ->
+                PendingIntent.getActivity(this, 0, notificationIntent,
+                    PendingIntent.FLAG_IMMUTABLE)
+            }
+        val notification: Notification =Notification.Builder(this,"MQTT_Service")
+            .setContentTitle("「Smart_Medical_APP」目前正在執行中")
+            .setContentText("輕觸即可嘹解詳情或停止應用程式")
+            .setSmallIcon(R.drawable.ic_baseline_medical_services_24)
+            .setContentIntent(pendingIntent)
+            .setTicker("Smart_Medical_APP」啟動")
+            .build()
+        startForeground(1,notification)
         return START_STICKY
     }
     override fun onBind(intent: Intent): IBinder ?=null
 
     override fun onDestroy() {
-        super.onDestroy()
         MQTT_disconnect()
+        super.onDestroy()
     }
 }

@@ -133,7 +133,6 @@ class PositionFragment : Fragment() {
         fusedLocationProviderClient=LocationServices.getFusedLocationProviderClient(requireActivity())
         tv_showLocation=root.findViewById(R.id.textView_location)
         btn_getLocation=root.findViewById(R.id.button_getLocation)
-        getAddressName(25.214,121.6323)
         return root
     }
 
