@@ -32,6 +32,7 @@ class RemindFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val root=inflater.inflate(R.layout.fragment_remind,null)
+
         return root
     }
     override fun onResume() {

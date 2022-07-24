@@ -1,5 +1,6 @@
 package com.example.smart_medical_app
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -10,7 +11,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.smart_medical_app.databinding.ActivityMainBinding
-import com.pedro.vlc.VlcVideoLibrary
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            applicationContext.startForegroundService(Intent(this,MyMQTTService::class.java))
+            startService(Intent(this,MyMQTTService::class.java))
         }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

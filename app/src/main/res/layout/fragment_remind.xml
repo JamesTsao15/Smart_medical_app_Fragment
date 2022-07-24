@@ -6,40 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".ui.remind.RemindFragment">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="84dp"
-        android:clickable="true"
-        android:src="@drawable/ic_baseline_add_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <com.arbelkilani.clock.Clock
+        android:id="@+id/clock"
+        android:layout_width="309dp"
+        android:layout_height="248dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginEnd="79dp"
+        app:clock_type="numeric"
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleView_SettingTimeList"
-        android:layout_width="352dp"
-        android:layout_height="523dp"
-
-        android:layout_marginBottom="73dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:numeric_format="hour_12"
+        app:values_color="@color/black" />
     <TextView
-        android:id="@+id/textView_CurrentTime"
-        android:layout_width="346dp"
-        android:layout_height="89dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="39dp"
+        android:id="@+id/textView6"
+        android:layout_width="314dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="44dp"
+        android:text="提醒事項"
         android:gravity="center"
-        android:text="00:00"
-        android:textSize="40dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/clock" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="414dp"
+        android:layout_height="430dp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 </androidx.constraintlayout.widget.ConstraintLayout>
