@@ -46,8 +46,6 @@ class MyMQTTService : Service() {
                 override fun onSuccess(asyncActionToken: IMqttToken?) {
                     Log.e("JAMES", "Connection success")
                     MQTT_subscribe("medical/#")
-                    MQTT_publish("medical/fell_down_alarm", "cellphone_connect")
-
                 }
 
                 override fun onFailure(asyncActionToken: IMqttToken?, exception: Throwable?) {

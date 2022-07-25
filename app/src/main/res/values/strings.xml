@@ -6,15 +6,4 @@
     <string name="personal">Personal</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string-array name="Remind_choose">
-        <item>不重複</item>
-        <item>每日</item>
-        <item>每周一</item>
-        <item>每周二</item>
-        <item>每周三</item>
-        <item>每周四</item>
-        <item>每周五</item>
-        <item>每周六</item>
-        <item>每周日</item>
-    </string-array>
 </resources>

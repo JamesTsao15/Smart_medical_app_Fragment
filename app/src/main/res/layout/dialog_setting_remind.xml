@@ -5,23 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <NumberPicker
         android:id="@+id/numberPicker_Hour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="164dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <include
+        android:id="@+id/dayPicker"
+        layout="@layout/daypicker_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="63dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="236dp"
         android:text=":"
         android:textSize="30dp"
         app:layout_constraintStart_toEndOf="@+id/numberPicker_Hour"
@@ -32,17 +43,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="89dp"
         android:text="提醒時間:"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="290dp" />
+        app:layout_constraintTop_toBottomOf="@+id/dayPicker" />
 
     <NumberPicker
         android:id="@+id/numberPicker_Minute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="164dp"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
 

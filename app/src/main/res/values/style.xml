@@ -8,4 +8,7 @@
         <item name="android:buttonStyleToggle">@style/Widget.Button.Toggle</item>
         <item name="android:textColor">@drawable/toogle_text_color</item>
     </style>
+    <style name="AddButton">
+        <item name="android:background">#00000000</item>
+    </style>
 </resources>

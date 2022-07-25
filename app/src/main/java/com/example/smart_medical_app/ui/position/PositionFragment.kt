@@ -129,6 +129,7 @@ class PositionFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        Log.e("JAMES","PositionFragmentOnCreate")
         val root=inflater.inflate(R.layout.fragment_position,null)
         fusedLocationProviderClient=LocationServices.getFusedLocationProviderClient(requireActivity())
         tv_showLocation=root.findViewById(R.id.textView_location)
