@@ -95,6 +95,14 @@ class RemindFragment : Fragment() {
             setRemindDayOfWeek.add(false)
         }
         btn_add.setOnClickListener {
+            editText_RemindThing.text.clear()
+            tgButton_Sun.isChecked=false
+            tgButton_Mon.isChecked=false
+            tgButton_Tue.isChecked=false
+            tgButton_Wen.isChecked=false
+            tgButton_Thu.isChecked=false
+            tgButton_Fri.isChecked=false
+            tgButton_Sat.isChecked=false
            val builder:AlertDialog.Builder=AlertDialog.Builder(requireContext())
             builder.setTitle("設定提醒")
                 .setView(custom_DialogView)
@@ -135,7 +143,11 @@ class RemindFragment : Fragment() {
                             SettingAlarmTimeArrayList,"AlarmTimeArrayList").saveData()
                         adapter.notifyDataSetChanged()
                     }
-                }.show()
+                }
+                .setOnDismissListener {
+                    (custom_DialogView.parent as ViewGroup).removeView(custom_DialogView)
+                }
+                .show()
         }
         tgButton_Sun.setOnCheckedChangeListener { buttonView, ischecked ->
             Log.e("JAMES","Sun is Checked")

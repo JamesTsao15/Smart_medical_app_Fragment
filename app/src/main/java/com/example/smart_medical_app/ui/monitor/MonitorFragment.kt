@@ -10,6 +10,7 @@ import com.example.smart_medical_app.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.pedro.vlc.VlcListener
 import com.pedro.vlc.VlcVideoLibrary
+import java.lang.RuntimeException
 
 class MonitorFragment : Fragment(),SurfaceHolder.Callback,VlcListener {
     private var uri:String="rtsp://123.195.87.158:8554/cam"
@@ -46,7 +47,11 @@ class MonitorFragment : Fragment(),SurfaceHolder.Callback,VlcListener {
     override fun onPause() {
         super.onPause()
         Log.e("JAMES","MonitorFragment_onPause")
-        vlcVideoLibrary.stop()
+        try{
+            vlcVideoLibrary.stop()
+        }catch (e:RuntimeException){
+            e.printStackTrace()
+        }
     }
     override fun surfaceChanged(p0: SurfaceHolder, p1: Int, p2: Int, p3: Int) {
     }
