@@ -199,3 +199,18 @@ kotlin code:
  如何有override surfaceCreated等等繼承函數(接口):
  
  參考網址:https://blog.csdn.net/qq_42250299/article/details/118528077
+ 
+ 
+ 7.DayPicker作法:
+ 
+ 參考網址:https://stackoverflow.com/questions/43810161/android-day-picker-like-in-google-clock
+ 
+ 8.crash code:The specified child already has a parent.
+ 原因:alertdialog重複setView，導致已有parent
+ 解決方案:https://ithelp.ithome.com.tw/articles/10239825
+ 
+ 9.ToggleButton的使用方法:
+ 
+ 參考網址:https://givemepass.blogspot.com/2016/11/toggle-button.html
+ 
+ 
