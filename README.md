@@ -206,7 +206,9 @@ kotlin code:
  參考網址:https://stackoverflow.com/questions/43810161/android-day-picker-like-in-google-clock
  
  8.crash code:The specified child already has a parent.
+ 
  原因:alertdialog重複setView，導致已有parent
+ 
  解決方案:https://ithelp.ithome.com.tw/articles/10239825
  
  9.ToggleButton的使用方法:
