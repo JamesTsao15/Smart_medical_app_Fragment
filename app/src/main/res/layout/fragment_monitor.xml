@@ -25,4 +25,18 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/surfaceView_monitor"
         app:layout_constraintTop_toTopOf="@+id/surfaceView_monitor" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_add"
+        android:layout_width="342dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="328dp"
+        android:background="@drawable/corners_bg"
+        android:drawableStart="@drawable/ic_baseline_doorbell_24"
+        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
+        android:text="事件回放"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

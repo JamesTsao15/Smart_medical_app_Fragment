@@ -10,6 +10,7 @@ import com.example.smart_medical_app.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.pedro.vlc.VlcListener
 import com.pedro.vlc.VlcVideoLibrary
+import java.lang.IllegalStateException
 import java.lang.RuntimeException
 
 class MonitorFragment : Fragment(),SurfaceHolder.Callback,VlcListener {
@@ -65,8 +66,14 @@ class MonitorFragment : Fragment(),SurfaceHolder.Callback,VlcListener {
     }
 
     override fun onError() {
-        Toast.makeText(requireContext(),"Error, make sure your endpoint is correct",Toast.LENGTH_SHORT).show()
-        vlcVideoLibrary.stop()
+        try {
+            Toast.makeText(requireContext(),"Error, make sure your endpoint is correct",Toast.LENGTH_SHORT).show()
+            vlcVideoLibrary.stop()
+        }
+        catch (e:IllegalStateException){
+            e.printStackTrace()
+        }
+
     }
 
 }

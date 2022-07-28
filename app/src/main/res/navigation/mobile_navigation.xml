@@ -23,8 +23,9 @@
         android:label="@string/remind"
         tools:layout="@layout/fragment_remind" />
     <fragment
-        android:id="@+id/navigation_personal"
-        android:name="com.example.smart_medical_app.ui.personal.PersonalFragment"
-        android:label="@string/personal"
-        tools:layout="@layout/fragment_personal"/>
+        android:id="@+id/navigation_setting"
+        android:name="com.example.smart_medical_app.ui.Setting.SettingFragment"
+        android:label="@string/Setting"
+        tools:layout="@layout/fragment_setting"/>
+
 </navigation>

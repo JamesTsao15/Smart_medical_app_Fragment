@@ -11,4 +11,9 @@
     <style name="AddButton">
         <item name="android:background">#00000000</item>
     </style>
+    <declare-styleable name="CustomUserCardView">
+        <attr name="UserName" format="string"/>
+        <attr name="UserId" format="string"/>
+        <attr name="UserImage" format="integer"/>
+    </declare-styleable>
 </resources>

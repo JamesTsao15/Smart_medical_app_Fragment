@@ -4,6 +4,9 @@
     <string name="currentposition">CurrentPosition</string>
     <string name="remind">Remind</string>
     <string name="personal">Personal</string>
+    <string name="login">Login</string>
+    <string name="Register">Register</string>
+    <string name="Setting">Setting</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
