@@ -133,6 +133,7 @@ class MyMQTTService : Service() {
         super.onCreate()
         Log.e("JAMES","MQTTServiceOnCreate")
         MQTT_connect(this)
+        
     }
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         notification_Setting()

@@ -68,7 +68,7 @@ class PositionFragment : Fragment() {
                     task->
                         var location:Location?=task.result
                         if(location==null){
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                                 newLocationData()
                             }
                         }
