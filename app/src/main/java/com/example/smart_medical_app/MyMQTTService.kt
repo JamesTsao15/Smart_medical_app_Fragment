@@ -131,7 +131,6 @@ class MyMQTTService : Service() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate() {
         super.onCreate()
-
         Log.e("JAMES","MQTTServiceOnCreate")
         MQTT_connect(this)
     }

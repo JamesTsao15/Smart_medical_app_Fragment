@@ -9,4 +9,11 @@
     <string name="Setting">Setting</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <integer-array name="setting_item_icon">
+        <item>@drawable/ic_baseline_group_24</item>
+        <item>@drawable/ic_baseline_group_add_24</item>
+        <item>@drawable/ic_baseline_emergency_24</item>
+        <item>@drawable/ic_baseline_call_24</item>
+    </integer-array>
 </resources>

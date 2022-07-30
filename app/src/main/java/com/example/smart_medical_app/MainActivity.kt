@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForegroundService(Intent(this,MyMQTTService::class.java))
+        }else{
             startService(Intent(this,MyMQTTService::class.java))
         }
         binding = ActivityMainBinding.inflate(layoutInflater)
