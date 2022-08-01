@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import androidx.navigation.fragment.findNavController
 import com.example.smart_medical_app.MySettingAdapter
 import com.example.smart_medical_app.R
 import com.example.smart_medical_app.SettingItem
@@ -50,7 +51,16 @@ class SettingFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         listView_Setting.setOnItemClickListener { adapterView, view, position, id ->
-            Log.e("JAMES",position.toString())
+            when(position){
+                0->
+                    findNavController().navigate(R.id.action_navigation_setting_to_navigation_qrcode)
+                1->
+                    Log.e("JAMES","Join Group")
+                2->
+                    Log.e("JAMES","emergencyInformation")
+                3->
+                    Log.e("JAMES","Call")
+            }
         }
     }
 

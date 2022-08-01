@@ -24,11 +24,6 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            startForegroundService(Intent(this,MyMQTTService::class.java))
-        }else{
-            startService(Intent(this,MyMQTTService::class.java))
-        }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val navView: BottomNavigationView = binding.navView
@@ -45,6 +40,13 @@ class MainActivity : AppCompatActivity() {
         if(isIgnoringBatteryOptimizations()==false){
             requestIgnoreBatteryOptimizations()
         }
+        startService(Intent(this,MyLocalService::class.java))
+        startService(Intent(this,MyRemoteService::class.java))
+        startService(Intent(this,MyMQTTService::class.java))
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
+            KeepAliveService.startJob(this)
+        }
+
     }
 
     @RequiresApi(Build.VERSION_CODES.M)

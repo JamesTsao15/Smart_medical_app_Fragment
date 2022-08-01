@@ -1,25 +1,29 @@
 package com.example.smart_medical_app
 
-import android.annotation.SuppressLint
 import android.app.*
 import android.content.Context
 import android.content.Intent
-import android.os.Build
-import android.os.IBinder
+import android.os.*
+import android.provider.Settings
 import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import info.mqtt.android.service.MqttAndroidClient
 import org.eclipse.paho.client.mqttv3.*
+
 
 class MyMQTTService : Service() {
 
     private lateinit var mqttClient: MqttAndroidClient
     private lateinit var fell_down_notification: Notification
     private lateinit var notificationManager: NotificationManager
+    private var isConnectionLost:Boolean=true
+
     private fun MQTT_connect(context: Context){
         val serverURI="ssl://95cdf9091ac24bf5931fb43b3260cac8.s1.eu.hivemq.cloud:8883"
         var recCount=0
+        isConnectionLost=false
         mqttClient= MqttAndroidClient(context,serverURI,"kotlin_client")
         mqttClient.setCallback(object : MqttCallback {
             override fun messageArrived(topic: String?, message: MqttMessage?) {
@@ -32,6 +36,8 @@ class MyMQTTService : Service() {
 
             override fun connectionLost(cause: Throwable?) {
                 Log.e("JAMES", "Connection lost ${cause.toString()}")
+                isConnectionLost=true
+
             }
 
             override fun deliveryComplete(token: IMqttDeliveryToken?) {
@@ -107,6 +113,9 @@ class MyMQTTService : Service() {
         } catch (e: MqttException) {
             e.printStackTrace()
         }
+        catch (e:UninitializedPropertyAccessException){
+            e.printStackTrace()
+        }
     }
 
     private fun notification_Setting(){
@@ -119,7 +128,6 @@ class MyMQTTService : Service() {
             fell_down_builder.setSmallIcon(R.drawable.ic_baseline_medical_services_24)
                 .setContentTitle("緊急通知")
                 .setContentText("有人跌倒了，請注意監控")
-                .setWhen(System.currentTimeMillis())
                 .setCategory(NotificationCompat.CATEGORY_ALARM)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
@@ -132,12 +140,27 @@ class MyMQTTService : Service() {
     override fun onCreate() {
         super.onCreate()
         Log.e("JAMES","MQTTServiceOnCreate")
-        MQTT_connect(this)
-        
     }
+
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         notification_Setting()
+        MQTT_disconnect()
+        MQTT_connect(this)
         Log.e("JAMES","startMQTTService")
+        Thread(Runnable {
+            while(true){
+//                Log.e("JAMES","isLostConnection:$isConnectionLost")
+                try {
+                    if(isConnectionLost){
+                        MQTT_disconnect()
+                        MQTT_connect(this)
+                    }
+                }catch (e:NullPointerException){
+                    e.printStackTrace()
+                }
+                Thread.sleep(1000)
+            }
+        }).start()
         return START_STICKY
     }
     override fun onBind(intent: Intent): IBinder ?=null

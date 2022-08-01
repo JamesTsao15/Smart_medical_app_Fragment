@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.smart_medical_app">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -19,6 +20,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Smart_medical_app">
+        <service
+            android:name=".KeepAliveService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service
+            android:name=".MyRemoteService$CancelNotificationService"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="Instantiatable" />
+        <service
+            android:name=".MyRemoteService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote"/>
+        <service
+            android:name=".MyLocalService$CancelNotificationService"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="Instantiatable" />
+        <service
+            android:name=".MyLocalService"
+            android:enabled="true"
+            android:exported="true" />
 
         <activity
             android:name=".RegisterActivity"
