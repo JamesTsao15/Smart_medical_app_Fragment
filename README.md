@@ -268,5 +268,9 @@ kotlin code:
  
  https://www.youtube.com/watch?v=8Pv96bvBJL4&list=PLfosMn46PuFY05waY2ulSZkwG3G7tgLi7&index=40
  
+ 18.LinearLayout 靠右顯示:
  
+ 解決方法:
+ 
+ https://blog.csdn.net/mouttz/article/details/16354773
  
