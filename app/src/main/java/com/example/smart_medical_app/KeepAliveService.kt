@@ -32,11 +32,7 @@ class KeepAliveService : JobService() {
             startService(Intent(this, MyRemoteService::class.java))
         }
         MQTTServiceUntils= ServiceUtils(this,MyMQTTService::class.java.name)
-        val isMQTTServiceRunning:Boolean=MQTTServiceUntils.isServiceRunning()
-        Log.e("JAMES","MQTTService:$isMQTTServiceRunning")
-        if(!isMQTTServiceRunning){
-            startService(Intent(this,MyMQTTService::class.java))
-        }
+
         return false
     }
     companion object{

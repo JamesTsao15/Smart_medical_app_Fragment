@@ -26,27 +26,43 @@
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/drawable/shape_custom_view.xml" value="0.1475" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/drawable/shape_oval.xml" value="0.102" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/drawable/shape_oval_user_image.xml" value="0.1475" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/drawable/shape_recieve_message.xml" value="0.1695" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/drawable/shape_sent_message.xml" value="0.1695" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/drawable/toggle_bg.xml" value="0.102" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/drawable/toogle_text_color.xml" value="0.102" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/activity_main.xml" value="0.17603850050658562" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/activity_register.xml" value="0.5" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/alarm_list_item.xml" value="0.19375" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/custom_dialog_qrcode.xml" value="0.33" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/custom_notfication.xml" value="0.19114583333333332" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/custom_user_id_input.xml" value="0.33" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/custom_user_view_layout.xml" value="0.25" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/custom_userview_layout.xml" value="0.2708333333333333" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/custom_view_emerergency_info.xml" value="0.33" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/custom_view_emergency_info.xml" value="0.5" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/custom_view_recieve_message.xml" value="0.25" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/custom_view_send_message.xml" value="0.25" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/daypicker_layout.xml" value="0.33" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/dialog_setting_remind.xml" value="0.33" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/dialog_view_emergency_info.xml" value="0.13043478260869565" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/fragment_chat.xml" value="0.12907608695652173" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/fragment_emergency_info.xml" value="0.25" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/fragment_login.xml" value="0.33" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/fragment_monitor.xml" value="0.22916666666666666" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/fragment_personal.xml" value="0.33" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/fragment_position.xml" value="0.271286231884058" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/fragment_q_rcode.xml" value="0.13043478260869565" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/fragment_q_rcode_scanner.xml" value="0.16" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/fragment_qrcode.xml" value="0.25" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/fragment_register.xml" value="0.33" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/fragment_remind.xml" value="0.25" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/fragment_setting.xml" value="0.25" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/fragment_user_info.xml" value="0.17603850050658562" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/fragment_wall_paper.xml" value="0.22" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/layout/setting_listview_item.xml" value="0.5" />
         <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.26666666666666666" />
+        <entry key="..\:/project_5G/Smart_medical_app2/app/src/main/res/menu/menu_group.xml" value="0.33" />
       </map>
     </option>
   </component>

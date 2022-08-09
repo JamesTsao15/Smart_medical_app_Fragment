@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="250dp"
+    android:orientation="vertical"
+    android:background="@drawable/shape_custom_view">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="姓名:"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/customView_tv_PersonName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="UserName"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp">
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="健康狀況:"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/customView_tv_health"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="sickProblem"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="緊急聯絡人1:"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/customView_tv_ContactPerson1"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="contactUser1"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp">
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="緊急電話1:"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/customView_tv_ContactPhoneNumber1"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="contactPhone1"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="緊急聯絡人2:"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/customView_tv_ContactPerson2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="ContactUser2"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp">
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="緊急電話2:"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/customView_tv_ContactPhoneNumber2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="contactPhone2"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp">
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="住址:"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/customView_tv_address"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
+</LinearLayout>

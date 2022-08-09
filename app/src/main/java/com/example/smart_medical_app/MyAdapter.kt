@@ -25,8 +25,8 @@ class MyAdapter(private val data:ArrayList<AlarmTime>): RecyclerView.Adapter<MyA
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-        holder.tv_SettingTime.text="${data[position].Hour}:${data[position].Minute}"
+        val timeString:String= String.format("%02d:%02d",data[position].Hour,data[position].Minute)
+        holder.tv_SettingTime.text=timeString
         holder.tv_taskName.text=data[position].Task
         holder.sw_setOrCancel.isChecked=true
         holder.sw_setOrCancel.setOnCheckedChangeListener { Switch, isChecked ->

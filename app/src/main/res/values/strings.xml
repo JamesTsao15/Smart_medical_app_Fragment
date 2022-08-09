@@ -1,18 +1,19 @@
 <resources>
     <string name="app_name">Smart_medical_app</string>
     <string name="monitor">Monitor</string>
-    <string name="currentposition">CurrentPosition</string>
+    <string name="currentposition">CurrentLosition</string>
     <string name="remind">Remind</string>
     <string name="personal">Personal</string>
     <string name="login">Login</string>
     <string name="Register">Register</string>
     <string name="Setting">Setting</string>
+    <string name="chat">Chat</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <integer-array name="setting_item_icon">
-        <item>@drawable/ic_baseline_group_24</item>
-        <item>@drawable/ic_baseline_group_add_24</item>
+        <item>@drawable/ic_baseline_person_outline_24</item>
+        <item>@drawable/ic_baseline_devices_24</item>
         <item>@drawable/ic_baseline_emergency_24</item>
         <item>@drawable/ic_baseline_call_24</item>
     </integer-array>

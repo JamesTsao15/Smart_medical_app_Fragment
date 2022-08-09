@@ -1,9 +1,6 @@
 package com.example.smart_medical_app.ui.remind
 
-import android.app.AlarmManager
-import android.app.AlertDialog
-import android.app.Dialog
-import android.app.PendingIntent
+import android.app.*
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
@@ -21,7 +18,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smart_medical_app.*
+import com.example.smart_medical_app.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
+import com.google.firebase.database.ktx.getValue
 import com.google.gson.Gson
 import com.google.gson.annotations.Until
 import java.lang.NullPointerException
@@ -41,15 +42,18 @@ class RemindFragment : Fragment() {
     private lateinit var tgButton_Thu: ToggleButton
     private lateinit var tgButton_Fri: ToggleButton
     private lateinit var tgButton_Sat: ToggleButton
+    private lateinit var progressDialog: ProgressDialog
     private lateinit var numberPicker_Hour: NumberPicker
     private lateinit var numberPicker_Minute: NumberPicker
     private lateinit var recycleView:RecyclerView
     private lateinit var custom_DialogView:View
     private lateinit var dayPicker:LinearLayout
     private lateinit var setRemindDayOfWeek:ArrayList<Boolean>
-    private lateinit var SettingAlarmTimeArrayList:ArrayList<AlarmTime>
-    private lateinit var sharedPreferencesArrayList:ArrayList<AlarmTime>
+    private lateinit var databaseReference: DatabaseReference
+    private lateinit var settingAlarmTimeList:ArrayList<AlarmTime>
+    private lateinit var mAuth: FirebaseAuth
     private lateinit var adapter: MyAdapter
+    private var uid:String=""
     private var hour:Int=-1
     private var minute:Int=-1
     override fun onCreateView(
@@ -59,7 +63,7 @@ class RemindFragment : Fragment() {
     ): View {
         val root=inflater.inflate(R.layout.fragment_remind,null)
         val inflater_view=LayoutInflater.from(requireContext())
-        SettingAlarmTimeArrayList= ArrayList()
+        settingAlarmTimeList= ArrayList()
         custom_DialogView=inflater_view.inflate(R.layout.dialog_setting_remind,null)
         editText_RemindThing=custom_DialogView.findViewById(R.id.editText_RemindThing)
         dayPicker=custom_DialogView.findViewById(R.id.dayPicker)
@@ -73,18 +77,15 @@ class RemindFragment : Fragment() {
         tgButton_Sat=dayPicker.findViewById(R.id.tSat)
         numberPicker_Hour=custom_DialogView.findViewById(R.id.numberPicker_Hour)
         numberPicker_Minute=custom_DialogView.findViewById(R.id.numberPicker_Minute)
+        progressDialog=ProgressDialog(requireContext())
+        mAuth= FirebaseAuth.getInstance()
+        uid=mAuth.currentUser?.uid ?:""
+        databaseReference= FirebaseDatabase.getInstance().getReference("Users_RemindTask")
         btn_add=root.findViewById(R.id.btn_add)
-        try{
-            sharedPreferencesArrayList=Store_and_Load_ArrayList(requireContext(),"UserSettingInformation", SettingAlarmTimeArrayList,"AlarmTimeArrayList").loadData()
-            SettingAlarmTimeArrayList=sharedPreferencesArrayList
-        }catch (e:NullPointerException){
-            e.printStackTrace()
-        }
         val linearLayoutManager=LinearLayoutManager(requireContext())
         linearLayoutManager.orientation=LinearLayoutManager.VERTICAL
         recycleView.layoutManager=linearLayoutManager
-        adapter= MyAdapter(SettingAlarmTimeArrayList)
-        recycleView.adapter=adapter
+        adapter= MyAdapter(settingAlarmTimeList)
         return root
     }
     override fun onResume() {
@@ -139,11 +140,8 @@ class RemindFragment : Fragment() {
                             }
                         }
                         Log.e("JAMES",Remindcycle)
-                        SettingAlarmTimeArrayList.add(AlarmTime(taskName,Remindcycle,hour,minute))
-                        Log.e("JAMES",SettingAlarmTimeArrayList.toString())
-                        Store_and_Load_ArrayList(requireContext(),"UserSettingInformation",
-                            SettingAlarmTimeArrayList,"AlarmTimeArrayList").saveData()
-                        adapter.notifyDataSetChanged()
+                        showProgressDialog()
+                        storeDataToRealTimeDatabase(AlarmTime(taskName,Remindcycle,hour,minute))
                     }
                 }
                 .setOnDismissListener {
@@ -187,6 +185,44 @@ class RemindFragment : Fragment() {
             minute=newval
             Log.e("JAMES",newval.toString())
         }
+        databaseReference.child(uid).addValueEventListener(object :ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                settingAlarmTimeList.clear()
+                for(data in snapshot.children){
+                    val taskName=data.child("task").getValue().toString()
+                    val remindCycle=data.child("remindCycle").getValue().toString()
+                    val minute=data.child("minute").getValue().toString().toInt()
+                    val hour=data.child("hour").getValue().toString().toInt()
+                    val alarmTime=AlarmTime(taskName,remindCycle,hour,minute)
+                    settingAlarmTimeList.add(alarmTime)
+                    Log.e("JAMES",alarmTime.toString())
+                    adapter.notifyDataSetChanged()
+                    recycleView.adapter=adapter
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
+    private fun storeDataToRealTimeDatabase(alarmTime: AlarmTime) {
+        if(uid!=""){
+            databaseReference.child(uid).child(alarmTime.Task).setValue(alarmTime).addOnCompleteListener {
+                    task->
+                if(task.isSuccessful){
+                    progressDialog.dismiss()
+                    Toast.makeText(requireContext(),"資料儲存成功",Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    progressDialog.dismiss()
+                    Toast.makeText(requireContext(),"資料儲存失敗",Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+
     }
 
     private fun alertDialogViewSetUp() {
@@ -209,6 +245,12 @@ class RemindFragment : Fragment() {
         minute=currentTime.get(Calendar.MINUTE)
         numberPicker_Hour.value=currentTime.get(Calendar.HOUR_OF_DAY)
         numberPicker_Minute.value=currentTime.get(Calendar.MINUTE)
+    }
+    private fun showProgressDialog() {
+        progressDialog.setMessage("正在儲存中，請稍後...")
+        progressDialog.setTitle("儲存資料")
+        progressDialog.setCanceledOnTouchOutside(false)
+        progressDialog.show()
     }
 
 

@@ -7,19 +7,20 @@
     tools:context=".ui.qrcode.QrcodeFragment">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView_qrcode"
         android:layout_width="328dp"
         android:layout_height="310dp"
         android:layout_marginStart="41dp"
-        android:layout_marginTop="109dp"
+        android:layout_marginTop="208dp"
         android:layout_marginEnd="42dp"
         android:src="@drawable/ic_baseline_settings_24"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textView_groupQRcode"
         android:layout_width="156dp"
         android:layout_height="43dp"
         android:layout_marginStart="127dp"
@@ -30,6 +31,41 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_qrcode" />
+
+    <TextView
+        android:id="@+id/textView_groupName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="70dp"
+        android:text="群組名稱:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextGroupName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="55dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView_groupName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_generateQRcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="生成qrcode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextGroupName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

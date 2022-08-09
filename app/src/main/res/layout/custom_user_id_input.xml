@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用者ID"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"/>
+
+    <EditText
+        android:id="@+id/editTextUserID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:hint="請輸入使用者ID"
+        android:inputType="textPersonName" />
+        <Button
+            android:id="@+id/button_sendUserID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="確定"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"/>
+</LinearLayout>

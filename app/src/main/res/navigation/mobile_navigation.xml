@@ -12,10 +12,17 @@
         tools:layout="@layout/fragment_monitor" />
 
     <fragment
-        android:id="@+id/navigation_position"
-        android:name="com.example.smart_medical_app.ui.position.PositionFragment"
+        android:id="@+id/navigation_chat"
+        android:name="com.example.smart_medical_app.ui.chat.ChatFragment"
         android:label="@string/currentposition"
-        tools:layout="@layout/fragment_position" />
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_navigation_chat_to_navigation_qrcodeScanner"
+            app:destination="@id/navigation_qrcodeScanner" />
+        <action
+            android:id="@+id/action_navigation_chat_to_navigation_qrcode"
+            app:destination="@id/navigation_qrcode" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_remind"
@@ -28,13 +35,31 @@
         android:label="@string/Setting"
         tools:layout="@layout/fragment_setting">
         <action
-            android:id="@+id/action_navigation_setting_to_navigation_qrcode"
-            app:destination="@id/navigation_qrcode" />
+            android:id="@+id/action_navigation_setting_to_navigation_emergencyInfo"
+            app:destination="@id/navigation_emergencyInfo" />
     </fragment>
     <fragment
         android:id="@+id/navigation_qrcode"
         android:name="com.example.smart_medical_app.ui.qrcode.QrcodeFragment"
         android:label="QRCODE"
         tools:layout="@layout/fragment_qrcode"/>
-
+    <fragment
+        android:id="@+id/navigation_qrcodeScanner"
+        android:name="com.example.smart_medical_app.ui.qrcodeScanner.QRcodeScannerFragment"
+        android:label="QRCODE SCANNER"
+        tools:layout="@layout/fragment_q_rcode_scanner"/>
+    <fragment
+        android:id="@+id/navigation_emergencyInfo"
+        android:label="Emergency Information"
+        android:name="com.example.smart_medical_app.ui.emergencyInfo.emergencyInfoFragment"
+        tools:layout="@layout/fragment_emergency_info">
+        <action
+            android:id="@+id/action_navigation_emergencyInfo_to_navigation_WallPaper"
+            app:destination="@id/navigation_WallPaper" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_WallPaper"
+        tools:layout="@layout/fragment_wall_paper"
+        android:label="WallPaper"
+        android:name="com.example.smart_medical_app.ui.showWallPaper.WallPaperFragment"/>
 </navigation>

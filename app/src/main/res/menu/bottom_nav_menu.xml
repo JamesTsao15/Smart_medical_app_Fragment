@@ -7,9 +7,9 @@
         android:title="@string/monitor" />
 
     <item
-        android:id="@+id/navigation_position"
-        android:icon="@drawable/ic_baseline_gps_fixed_24"
-        android:title="@string/currentposition" />
+        android:id="@+id/navigation_chat"
+        android:icon="@drawable/ic_baseline_chat_24"
+        android:title="@string/chat" />
 
     <item
         android:id="@+id/navigation_remind"

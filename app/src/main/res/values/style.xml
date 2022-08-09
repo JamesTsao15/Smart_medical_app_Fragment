@@ -16,4 +16,13 @@
         <attr name="UserId" format="string"/>
         <attr name="UserImage" format="integer"/>
     </declare-styleable>
+    <declare-styleable name="CustomEmergencyInfo">
+        <attr name="PersonName" format="string"/>
+        <attr name="HealthStatus" format="string"/>
+        <attr name="ContactUser1" format="string"/>
+        <attr name="ContactPhone1" format="string"/>
+        <attr name="ContactUser2" format="string"/>
+        <attr name="ContactPhone2" format="string"/>
+        <attr name="address" format="string"/>
+    </declare-styleable>
 </resources>
