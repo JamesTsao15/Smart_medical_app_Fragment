@@ -215,4 +215,58 @@ kotlin code:
  
  參考網址:https://givemepass.blogspot.com/2016/11/toggle-button.html
  
+ 10.Class does not define a no-argument constructor. If you are using ProGuard, make sure these constructors are not stripped
+ 
+ 解決方案:
+ 
+ https://stackoverflow.com/questions/52162502/class-does-not-define-a-no-argument-constructor-if-you-are-using-proguard-make
+ 
+ 11.如何設鎖定螢幕手機壁紙:
+ 
+ 解決方案:
+ 
+ https://stackoverflow.com/questions/59114620/how-to-set-wallpaper-as-lockscreen-or-bothhome-and-lock
+ 
+ https://www.youtube.com/watch?v=tQFgSUX5GDg&list=PLfosMn46PuFY05waY2ulSZkwG3G7tgLi7&index=46&t=699s
+ 
+ 12.bitmap 多行文字作法:
+ 
+ 解決方案:
+ 
+ https://stackoverflow.com/questions/6756975/draw-multi-line-text-to-canvas
+ 
+ 13.解除應用程式後重載app firebase 自動登入:
+ 
+ 解決方案:
+ 
+ https://stackoverflow.com/questions/50259911/firebase-auth-signout-not-working-on-uninstall
+ 
+ https://stackoverflow.com/questions/46480648/android-allowbackup-error
+ 
+ 
+ 14.在fragment內設定actionBar標題:
+ 
+ 解決方案:
+ 
+ https://www.androidbugfix.com/2022/01/how-to-change-actionbar-title-in.html
+ 
+ 15.在fragment內設定actionBar的內容:
+ 
+ 解決方案:
+ 
+ https://developer.android.com/guide/fragments/appbar
+ 
+ 16.在textView內使用link:
+ 
+ 解決方案:
+ 
+ https://magiclen.org/android-html-textview/
+ 
+ 17.聊天室功能做法:
+ 
+ 參考影片:
+ 
+ https://www.youtube.com/watch?v=8Pv96bvBJL4&list=PLfosMn46PuFY05waY2ulSZkwG3G7tgLi7&index=40
+ 
+ 
  
